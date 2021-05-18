@@ -1,6 +1,38 @@
 # Assignment
 
 ## Role Based Access Control:
+## updates made
+ 1. We can now assign multiple roles to a single user eg:
+ 2 deepika abc123 manager
+ 2 deepika def123 admin
+ 2. You will not be able to assign write to a manager role on r2 eg. if you try
+ 3 deepika manager r2 write # it will show appropriate msg
+ 3 deepika manager r1 read #this will work
+ you can view what all accesses a role can have on diffrent resource in config.py in resource_access_role_dict.
+ 
+## demo steps:
+
+# you will be logged in as admin by default.
+1. to create a user:
+# 2 deepika abc123 manager
+# 2 deepika def123 admin
+2. to login with differen role or to login as different user
+# 1 deepika def123 admin
+3. Now, that you are logged in as admin role, you can create users or edit roles .To assign a role to another user (you can only do that if you have permission to assign roles i.e. if you are admin)
+# 3 deepika manager r1 read
+# 3 deepika manager r1 write
+# 3 deepika manager r2 read
+if you try to assign write on r2 to manager role you will be shown appropriate message that you can't provide write on r2 to manager
+4. to view roles, login as user whose accesses accesses you want to view
+# 1 deepika abc123 manager
+# 4 view 
+this will show you all your access on different resources)
+5. to access a resource
+# 4 access r1 read
+# 4 access r2 read 
+since deepikas manager role doesn't have write role on r2 , she will be shown appropriate message
+
+
 
 ### How to run the program
 
